@@ -16,15 +16,11 @@
             final int BASE = 100;
             int num = 5;
 
-            out.print(BASE+num+"<br>");
-            out.print(BASE-num+"<br>");
-            out.print(BASE*num+"<br>");
-            out.print(BASE/num+"<br>");
-            
-out.print(--num);
-            
-            
-         
+            out.print(BASE + num + "<br>");
+            out.print(BASE - num + "<br>");
+            out.print(BASE * num + "<br>");
+            out.print(BASE / num + "<br>");
+
 
         %>
     </body>
