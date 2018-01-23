@@ -13,13 +13,11 @@
     </head>
     <body>
         <%
-            int num = 5;
-            int ace =4;
-            int say =3;
+            int num = 1;
 
             if (num == 1) {
                 out.print("1です！");
-            } else if (ace == 2) {
+            } else if (num == 2) {
                 out.print("プログラミングキャンプ！");
             } else {
                 out.print("その他です！");
