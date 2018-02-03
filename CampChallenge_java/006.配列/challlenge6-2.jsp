@@ -13,19 +13,22 @@
         <title>JSP Page</title>
     </head>
     <body>
-       <%
-       ArrayList <String> data=new ArrayList <String>();
-        data.add("10");
+        <%
+            ArrayList<String> data = new ArrayList<String>();
+            data.add("10");
             data.add("100");
             data.add("soeda");
             data.add("hayashi");
             data.add("-20");
             data.add("118");
             data.add("END");
-            out.print(data);
-            
-            data.set(2,"33");
-            out.print(data);
-             %>
+            out.print("要素数" + data.size() + "<br>");
+            out.print(data+"<br>");
+
+            data.set(2, "33");
+            for (String main : data) {
+                out.print(main);
+            }
+        %>
     </body>
 </html>
