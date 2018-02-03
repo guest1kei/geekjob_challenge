@@ -22,7 +22,8 @@
 
             data1.put("1", "AAA");
             data2.put("hello", "world");
-            data3.put("name", "soeda"); data3.put("age","33");
+            data3.put("name", "soeda");
+            data3.put("age", "33");
             data4.put("20", "20");
 
             ArrayList<HashMap> datas = new ArrayList<HashMap>();
@@ -32,7 +33,9 @@
             datas.add(data3);
             datas.add(data4);
 
-            out.print(datas);
+            for (HashMap main : datas) {
+                out.print(main);
+            }
 
 
         %>
