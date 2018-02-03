@@ -27,30 +27,58 @@ public class challenge11for1 extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    void myprofile(PrintWriter out) {
+    boolean myprofile(PrintWriter out) {
         out.print("私の名前は上保圭司です<br>");
         out.print("生年月日は12月22日です<br>");
         out.print("趣味はゲームと旅行です<br>");
-      
- 
-            
-         
-            
+
+        return true;
+
     }
 
+    // void 戻り値なし
+    // boolean true / false のどちらか
+  
+
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-     
-              
-       for(int i=0; i<10;i++)
-       {
-       myprofile(out);
-       }
+
+            
+            // ^^^^^^^^^^^^           
+            //=> この部分が true に書き換わる
+
+            //=> true が b に代入される
+
+            // if( true ){ .. と書いたのと同じ
+            // -> if 文の処理の中身が実行される
+            
+            
+            //^^^^^^^^^
+            //=> 7 に書き換わる
+
+            
+            //=> 7 と表示される
+
            
+            //=> 7 と表示される
+
+            boolean a = myprofile(out);
+            for (int i = 0; i < 10; i++) {
+                myprofile(out);
+            }
+
+            if ( myprofile(out) ) {
+                out.print("この処理は正しく実行できました");
+            } else {
+                out.print("正しく実行できませんでした");
+            }
+
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
