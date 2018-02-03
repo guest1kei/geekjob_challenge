@@ -32,8 +32,6 @@ public class FortuneTelling extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -48,22 +46,23 @@ public class FortuneTelling extends HttpServlet {
             out.println("<h1>Servlet FortuneTelling at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
+           
+            final String result = "WEB-INF/isp/FortuneTellingResult.jsp";
+
             String luckList[] = {"大吉", "中吉", "小吉", "吉", "半吉", "末小吉", "凶", "小凶", "半凶", "末凶", "大凶"};
 
             Random rand = new Random();
             Integer index = rand.nextInt(luckList.length);
-            out.print(luckList[index]);
-            
+            out.print("あなたの運勢は"+ luckList[index] + "です");
+
             ResultData data = new ResultData();
             data.setD(new Date());
-            data.setLuck(luckList[index]);
-            request.setAttribute("DATA",data);
-            
-            RequestDispatcher rd=request.getRequestDispatcher(result);
+            data.setLuckList(luckList[index]);
+            request.setAttribute("DATA", data);
+
+            RequestDispatcher rd = request.getRequestDispatcher(result);
             rd.forward(request, response);
- 
-        
-        
+
         }
     }
 
