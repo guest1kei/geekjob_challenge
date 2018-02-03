@@ -17,7 +17,7 @@
         <%
             // "10", "100", "soeda", "hayashi", "-20", "118", "END"
             ArrayList<String> data = new ArrayList<String>();
-             
+
             data.add("10");
             data.add("100");
             data.add("soeda");
@@ -25,11 +25,13 @@
             data.add("-20");
             data.add("118");
             data.add("END");
-            
+            out.print("要素数" + data.size() + "<br>");
 
-            out.print(data);
+            for (String main : data) {
+                out.print(main);
+                out.print("<br>");
+            }
 
-            
         %>
     </body>
 </html>
